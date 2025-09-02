@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+
+#datePickerSection, #whatsappSection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+input[type="datetime-local"] {
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 20px;
+    border: 2px solid #ff9999;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(255, 153, 153, 0.2);
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+input[type="datetime-local"]:focus {
+    border-color: #ff6666;
+    outline: none;
+    box-shadow: 0 4px 20px rgba(255, 102, 102, 0.3);
+    transform: scale(1.02);
+}
+
+.btn-confirm, .btn-whatsapp {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-confirm {
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+    color: white;
+}
+
+.btn-whatsapp {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white;
+}
+
+.btn-confirm:hover, .btn-whatsapp:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-confirm:active, .btn-whatsapp:active {
+    transform: translateY(1px);
+}

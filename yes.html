@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knew you would say yes!</title>
+    <link rel="stylesheet" href="./yes.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">I know you'll say yes</h1>
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+        </div>
+        <div id="datePickerSection">
+            <h2>So, what date are we going to make the world jealous?</h2>
+            <input type="datetime-local" id="datePicker">
+            <button onclick="confirmDate()" class="btn-confirm">Save to My Heart ❤️</button>
+        </div>
+        <div id="whatsappSection" style="display: none;">
+            <button onclick="shareToWhatsApp()" class="btn-whatsapp">Send Our Date</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedDate = '';
+
+        function confirmDate() {
+            const datePicker = document.getElementById('datePicker');
+            selectedDate = datePicker.value;
+            
+            if (selectedDate) {
+                Swal.fire({
+                    title: 'Data saved successfully',
+                    text: 'Perfect! That day just became my favorite 💖',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                
+                document.getElementById('datePickerSection').style.display = 'none';
+                document.getElementById('whatsappSection').style.display = 'block';
+            }
+        }
+
+        function shareToWhatsApp() {
+            const formattedDate = new Date(selectedDate).toLocaleString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const text = `I can ${formattedDate} 😊`;
+            const whatsappURL = `https://wa.me/6288293208245?text=${encodeURIComponent(text)}`; // ubah nomor kamu disini
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
