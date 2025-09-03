@@ -71,5 +71,3 @@ This project consists of two main pages:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-Enjoy 💖
